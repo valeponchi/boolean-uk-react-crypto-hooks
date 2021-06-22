@@ -1,0 +1,18 @@
+Repo: boolean-uk-react-crypto-hooks
+
+Description
+We're going to use an exercise you're already familiar with to practice extracting some code into custom hooks. There's some opportunities here to extract some logic into customs hooks, and we're about to do exactly that!
+
+Instructions
+- Use this sandbox as template => https://codesandbox.io/s/crypto-tracker-w-custom-hooks-template-moqn8?file=/src/App.jsx
+- Remember to check the existing code before starting
+- In the App component, extract the fetch in the useEffect and corresponding state into a custom hook
+- In the NewsFeed component, extract the fetch in the useEffect and corresponding state into a custom hook
+
+
+Tips
+- Think about what are the dependencies that the current hooks are using, and that you might need to move into your custom hook
+- Remember you can pass initial values to your custom hook, and that you can return values and functions from a custom hook as well
+
+Challenge
+- In the MainDetail component, extract the various useEffects into a custom hook, as you see fit. Keep in mind how they relate to each other.
