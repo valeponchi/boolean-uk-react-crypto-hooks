@@ -8,6 +8,7 @@ function currentTime() {
 
 //initialValue = 30
 //intervalTime = 1000
+//id will come from obj passing as props in MainDetails.js
 
 function useCounter(initialValue, intervalTime, id) {
   const [counter, setCounter] = useState(initialValue);

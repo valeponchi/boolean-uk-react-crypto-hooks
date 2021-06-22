@@ -10,7 +10,7 @@ function useCryptoList() {
       .then(setCryptoList);
   }, [setCryptoList]);
 
-  return {cryptoList, setCryptoList}
+  return {cryptoList}
 }
 
 export default useCryptoList

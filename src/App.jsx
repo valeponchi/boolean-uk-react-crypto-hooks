@@ -13,7 +13,7 @@ import useCryptoList from "./components/hooks/useCryptoList";
 
 function App() {
   const [selectedCrypto, setSelectedCripto] = useState(null);
-  const {cryptoList, setCryptoList} = useCryptoList()
+  const {cryptoList} = useCryptoList()
   
 
   function selectCrypto(selectedId) {

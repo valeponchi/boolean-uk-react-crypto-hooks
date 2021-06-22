@@ -15,4 +15,4 @@ Tips
 - Remember you can pass initial values to your custom hook, and that you can return values and functions from a custom hook as well
 
 Challenge
-- In the MainDetail component, extract the various useEffects into a custom hook, as you see fit. Keep in mind how they relate to each other.
+- ✅In the MainDetail component, extract the various useEffects into a custom hook, as you see fit. Keep in mind how they relate to each other.
