@@ -37,22 +37,22 @@ export default function MainDetail({
   //////////////////////////////////////////////////////////////////////////////////////
 
   // You can turn this into a custom hook////////////////////
-  useEffect(() => {
-    if (counter < 0) {
-      fetch(getCriptoUpdateUrl(id))
-        .then((resp) => resp.json())
-        .then((data) => {
-          updateCryptoData(
-            {
-              current_price: data[id].gbp,
-              last_updated: data[id]["last_updated_at"]
-            },
-            id
-          );
-        });
-      setCounter(30);
-    }
-  }, [id, counter, setCounter, updateCryptoData]);
+  // useEffect(() => {
+  //   if (counter < 0) {
+  //     fetch(getCriptoUpdateUrl(id))
+  //       .then((resp) => resp.json())
+  //       .then((data) => {
+  //         updateCryptoData(
+  //           {
+  //             current_price: data[id].gbp,
+  //             last_updated: data[id]["last_updated_at"]
+  //           },
+  //           id
+  //         );
+  //       });
+  //     setCounter(30);
+  //   }
+  // }, [id, counter, setCounter, updateCryptoData]);
   ///////////////////////////////////////////////////////////
 
   // You can turn this into a custom hook////////////////////
