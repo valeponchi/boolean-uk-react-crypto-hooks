@@ -1,7 +1,7 @@
 import useStatusUpdates from "./hooks/useStatusUpdates";
 import NewsCard from "./NewsCard";
 
-export default function NewsFeed() {
+function NewsFeed() {
 
   const {newsList} = useStatusUpdates()
 
@@ -15,3 +15,5 @@ export default function NewsFeed() {
     </ul>
   );
 }
+
+export default NewsFeed

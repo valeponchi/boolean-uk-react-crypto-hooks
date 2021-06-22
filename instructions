@@ -7,7 +7,7 @@ Instructions
 - ✅Use this sandbox as template => https://codesandbox.io/s/crypto-tracker-w-custom-hooks-template-moqn8?file=/src/App.jsx
 - ✅Remember to check the existing code before starting
 - ✅In the App component, extract the fetch in the useEffect and corresponding state into a custom hook
-- In the NewsFeed component, extract the fetch in the useEffect and corresponding state into a custom hook
+- ✅In the NewsFeed component, extract the fetch in the useEffect and corresponding state into a custom hook
 
 
 Tips

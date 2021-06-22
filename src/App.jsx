@@ -1,11 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-import { CRIPTO_LIST } from "./constants";
 import MainDetail from "./components/MainDetail";
 import NewsFeed from "./components/NewsFeed";
 import SideList from "./components/SideList";
 import useCryptoList from "./components/hooks/useCryptoList";
-import useStatusUpdates from "./components/hooks/useStatusUpdates";
 
 //////////////////////////////////////////////////
 //                                              //
@@ -24,14 +22,6 @@ function App() {
 
   function findCripto(criptoId) {
     return cryptoList.find(({ id }) => id === criptoId);
-  }
-
-  function updateCryptoData(data, id) {
-    setCryptoList((cryptoList) =>
-      cryptoList.map((crypto) =>
-        crypto.id === id ? { ...crypto, ...data } : crypto
-      )
-    );
   }
 
   function isSelectedCrypto(id) {
@@ -54,7 +44,7 @@ function App() {
           // Let's have a look at MainDetail
           <MainDetail
             selectedCrypto={findCripto(selectedCrypto)}
-            updateCryptoData={updateCryptoData}
+            // updateCryptoData={updateCryptoData}
           />
         ) : (
           "Select a coin bro!"

@@ -1,7 +1,47 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getCriptoUpdateUrl } from "../../constants";
+import useCryptoList from "./useCryptoList";
 
-function useCounter() {
+function currentTime() {
+  return Math.round(Date.now() / 1000);
+}
+
+//initialValue = 30
+//intervalTime = 1000
+
+function useCounter(initialValue, intervalTime, id) {
+  const [counter, setCounter] = useState(initialValue);
+  const [playTicker, setPlayTicker] = useState(false);
+  const [currTime, setCurrTime] = useState(currentTime());
+  const {cryptoList, setCryptoList} = useCryptoList()
+
+  function updateCryptoData(data, id) {
+  setCryptoList((cryptoList) =>
+    cryptoList.map((crypto) =>
+      crypto.id === id ? { ...crypto, ...data } : crypto
+    )
+  );
+}
+
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrTime((current) => current + 1);
+    }, intervalTime);
+    return () => clearInterval(timer);
+  }, [setCurrTime]);
+
+
+  useEffect(() => {
+    const interval =
+      playTicker &&
+      setInterval(() => {
+        setCounter((count) => count - 1);
+      }, intervalTime);
+
+    return () => clearInterval(interval);
+  }, [setCounter, playTicker]);
+
 
   useEffect(() => {
     if (counter < 0) {
@@ -16,11 +56,11 @@ function useCounter() {
             id
           );
         });
-      setCounter(30);
+      setCounter(initialValue);
     }
   }, [id, counter, setCounter, updateCryptoData]);
 
-  return
+  return {counter, currTime, playTicker, setPlayTicker}
 }
 
 export default useCounter
