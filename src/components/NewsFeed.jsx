@@ -3,7 +3,7 @@ import NewsCard from "./NewsCard";
 
 function NewsFeed() {
 
-  const {newsList} = useStatusUpdates()
+  const newsList = useStatusUpdates()
 
   return (
     <ul className="newsfeed">

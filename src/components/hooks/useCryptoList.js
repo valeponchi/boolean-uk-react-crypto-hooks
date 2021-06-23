@@ -10,7 +10,15 @@ function useCryptoList() {
       .then(setCryptoList);
   }, [setCryptoList]);
 
-  return {cryptoList}
+  function updateCryptoData(data, id) {
+    setCryptoList((cryptoList) =>
+      cryptoList.map((crypto) =>
+        crypto.id === id ? { ...crypto, ...data } : crypto
+      )
+    );
+  }
+
+  return {cryptoList, updateCryptoData}
 }
 
 export default useCryptoList
