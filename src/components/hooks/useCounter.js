@@ -1,15 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { getCriptoUpdateUrl } from "../../constants";
 import useCount from "./useCount";
 import useCurrentTime from "./useCurrentTime";
 import useToggle from "./useToggle";
 
-
 //initialValue = 30
 //intervalTime = 1000
 //id will come from obj passing as props in MainDetails.js
-
-
 
 function useCounter(initialValue, intervalTime, id, updateCryptoData) {
   // const [counter, setCounter] = useState(initialValue);
