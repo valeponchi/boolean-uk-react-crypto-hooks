@@ -12,10 +12,10 @@ function convertToSeconds(dateValue) {
 */
 
 function MainDetail({
-  selectedCrypto: { id, name, current_price, last_updated, symbol }
+  selectedCrypto: { id, name, current_price, last_updated, symbol }, updateCryptoData
 }) {
 
-  const {counter, currTime, playTicker, setPlayTicker}= useCounter(30, 1000, id)
+  const {counter, currTime, playTicker, setPlayTicker}= useCounter(30, 1000, id, updateCryptoData)
  
   return (
     <>

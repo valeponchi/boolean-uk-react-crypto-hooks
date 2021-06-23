@@ -13,7 +13,7 @@ import useCryptoList from "./components/hooks/useCryptoList";
 
 function App() {
   const [selectedCrypto, setSelectedCripto] = useState(null);
-  const {cryptoList} = useCryptoList()
+  const {cryptoList, updateCryptoData} = useCryptoList()
   
 
   function selectCrypto(selectedId) {
@@ -44,7 +44,7 @@ function App() {
           // Let's have a look at MainDetail
           <MainDetail
             selectedCrypto={findCripto(selectedCrypto)}
-            // updateCryptoData={updateCryptoData}
+            updateCryptoData={updateCryptoData}
           />
         ) : (
           "Select a coin bro!"
