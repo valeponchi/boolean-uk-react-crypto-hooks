@@ -34,7 +34,7 @@ function App() {
       <aside className="side-list">
         {/* No need to worry about SideList and it's children, you can safey ignore it! */}
         <SideList
-          cryptoList={cryptoList}
+          cryptoList={cryptoList || []}
           isSelectedCrypto={isSelectedCrypto}
           selectCrypto={selectCrypto}
         />

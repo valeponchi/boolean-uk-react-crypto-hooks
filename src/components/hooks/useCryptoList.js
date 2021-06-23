@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
 import { CRIPTO_LIST } from "../../constants";
+import useFetch from "./useFetch";
+
 
 function useCryptoList() {
-  const [cryptoList, setCryptoList] = useState([]);
-  
-  useEffect(() => {
-    fetch(CRIPTO_LIST)
-      .then((resp) => resp.json())
-      .then(setCryptoList);
-  }, [setCryptoList]);
+  //CRIPTO_LIST
+  const [cryptoList, setCryptoList]=useFetch(CRIPTO_LIST)
 
   function updateCryptoData(data, id) {
     setCryptoList((cryptoList) =>
@@ -22,3 +19,4 @@ function useCryptoList() {
 }
 
 export default useCryptoList
+

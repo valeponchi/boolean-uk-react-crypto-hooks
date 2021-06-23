@@ -12,7 +12,7 @@ function useStatusUpdates() {
     [setNewsList]
   );
 
-  return newsList
+  return {newsList}
 }
 
 export default useStatusUpdates

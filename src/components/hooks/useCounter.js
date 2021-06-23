@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { getCriptoUpdateUrl } from "../../constants";
+import useCount from "./useCount";
 import useCurrentTime from "./useCurrentTime";
+import useToggle from "./useToggle";
 
 
 //initialValue = 30
@@ -10,15 +12,16 @@ import useCurrentTime from "./useCurrentTime";
 
 
 function useCounter(initialValue, intervalTime, id, updateCryptoData) {
-  const [counter, setCounter] = useState(initialValue);
-  const [playTicker, setPlayTicker] = useState(false);
+  // const [counter, setCounter] = useState(initialValue);
+  const [playTicker, setPlayTicker] = useToggle(true);
   const currTime = useCurrentTime(1000)
+  const {counter, down, reset, setCounter} =useCount(initialValue)
 
   useEffect(() => {
     const interval =
       playTicker &&
       setInterval(() => {
-        setCounter((count) => count - 1);
+        down();
       }, intervalTime);
 
     return () => clearInterval(interval);
@@ -38,7 +41,7 @@ function useCounter(initialValue, intervalTime, id, updateCryptoData) {
             id
           );
         });
-      setCounter(initialValue);
+      reset()
     }
   }, [id, counter, setCounter, updateCryptoData]);
 
